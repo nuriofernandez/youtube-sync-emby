@@ -12,7 +12,7 @@ func registerStorage() {
 	}
 }
 
-func Queue(link string) {
+func FetchVideo(link string) {
 	registerStorage()
 
 	if store.Exists(link + "-mp4") {
@@ -20,15 +20,25 @@ func Queue(link string) {
 	}
 
 	download(link, "mp4")
-	download(link, "thumbnail")
 
 	store.Save(link + "-mp4")
+}
+
+func FetchThumbnail(link string) {
+	registerStorage()
+
+	if store.Exists(link + "-thumbnail") {
+		return
+	}
+
+	download(link, "thumbnail")
+	store.Save(link + "-thumbnail")
 }
 
 func RefreshThumbnail(link string) {
 	registerStorage()
 
-	if store.Exists(link + "-thumbnail") {
+	if store.Exists(link + "-refreshthumbnail") {
 		return
 	}
 
