@@ -43,5 +43,5 @@ func RefreshThumbnail(link string) {
 	}
 
 	download(link, "thumbnail")
-	store.Save(link + "-thumbnail")
+	store.Save(link + "-refreshthumbnail")
 }
