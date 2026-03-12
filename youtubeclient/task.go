@@ -2,6 +2,7 @@ package youtubeclient
 
 import (
 	"fmt"
+	"time"
 )
 
 var channels = map[string]int{
@@ -33,6 +34,9 @@ func FetchVideos() []string {
 			fmt.Println("[YT Client] '" + channelTag + "' queueing video '" + videoLink + "' ...")
 			videoLinks = append(videoLinks, videoLink)
 		}
+
+		fmt.Println("[YT Client] '" + channelTag + "' fetching is completed. Waiting 5 seconds...")
+		time.Sleep(5 * time.Second)
 	}
 
 	return videoLinks
