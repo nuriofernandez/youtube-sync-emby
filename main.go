@@ -17,7 +17,7 @@ func main() {
 
 	fmt.Println("[YoutubeDownloader] Starting thumbnail downloading...")
 	for i, videoLink := range videos {
-		fmt.Printf("[YoutubeDownloader] (%d/%d) Downloading thumbnail '%s' ...\n", i+1, len(videoLink), videoLink)
+		fmt.Printf("[YoutubeDownloader] (%d/%d) Downloading thumbnail '%s' ...\n", i+1, len(videos), videoLink)
 		mutubeclient.FetchThumbnail("https://www.youtube.com" + videoLink)
 	}
 
@@ -26,7 +26,7 @@ func main() {
 
 	fmt.Println("[YoutubeDownloader] Starting thumbnail refreshing...")
 	for i, videoLink := range videos {
-		fmt.Printf("[YoutubeDownloader] (%d/%d) Downloading thumbnail '%s' ...\n", i+1, len(videoLink), videoLink)
+		fmt.Printf("[YoutubeDownloader] (%d/%d) Downloading thumbnail '%s' ...\n", i+1, len(videos), videoLink)
 		mutubeclient.RefreshThumbnail("https://www.youtube.com" + videoLink)
 	}
 
@@ -35,7 +35,7 @@ func main() {
 
 	fmt.Println("[YoutubeDownloader] Starting video downloading...")
 	for i, videoLink := range videos {
-		fmt.Printf("[YoutubeDownloader] (%d/%d) Downloading video '%s' ...\n", i+1, len(videoLink), videoLink)
+		fmt.Printf("[YoutubeDownloader] (%d/%d) Downloading video '%s' ...\n", i+1, len(videos), videoLink)
 		mutubeclient.FetchVideo("https://www.youtube.com" + videoLink)
 	}
 
