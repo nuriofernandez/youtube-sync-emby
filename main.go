@@ -26,7 +26,7 @@ func main() {
 
 	fmt.Println("[YoutubeDownloader] Starting thumbnail refreshing...")
 	for i, videoLink := range videos {
-		fmt.Printf("[YoutubeDownloader] (%d/%d) Downloading thumbnail '%s' ...\n", i+1, len(videos), videoLink)
+		fmt.Printf("[YoutubeDownloader] (%d/%d) Refreshing thumbnail '%s' ...\n", i+1, len(videos), videoLink)
 		mutubeclient.RefreshThumbnail("https://www.youtube.com" + videoLink)
 	}
 
