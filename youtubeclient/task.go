@@ -15,6 +15,7 @@ var channels = map[string]int{
 	"@vicesat":            0,
 	"@Fireship":           0,
 	"@KiraSensei1":        0,
+	"@LordDraugr":         0,
 }
 
 func FetchVideos() []string {
