@@ -36,7 +36,7 @@ func videoExtractor(str string) map[string]string {
 	return videos
 }
 
-var watchRegExp = regexp.MustCompile(`(?m)\/watch\?v=\w{10,}`)
+var watchRegExp = regexp.MustCompile(`(?m)\/watch\?v=[\w-]{10,}`)
 
 func extractWatch(html string) string {
 	allLinks := watchRegExp.FindAllString(html, 1)
